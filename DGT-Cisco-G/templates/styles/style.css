@@ -1,0 +1,26 @@
+.jumbotron {
+  padding-top: 7rem;
+  background-color: #e2edff;
+  padding-bottom: 0px;
+}
+.jumbotron img {
+  width: 200px;
+  height: 200px;
+}
+#projects {
+  background-color: #e2edff;
+}
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+section {
+  padding-top: 4rem;
+}
+a {
+  text-decoration: none;
+}
+span {
+  color: greenyellow;
+}

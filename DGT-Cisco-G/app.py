@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import folium
 import geopandas as gpd
 import os
@@ -16,7 +16,6 @@ app = Flask(__name__)
 @app.route("/")
 
 def indeks():
-    
     basemaps = {
         'Google Maps': folium.TileLayer(
             tiles= 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
@@ -153,7 +152,7 @@ def indeks():
 
     
     # Basemap
-    for basemap, TleLyer in basemaps.items():
+    for basemap, TileLayer in basemaps.items():
         basemaps[basemap].add_to(map)
     
     folium.LayerControl().add_to(map)
@@ -190,7 +189,10 @@ def indeks():
     minimap = MiniMap()
     map.add_child(minimap)
     
-    return map._repr_html_()
+    map.save(r+'/templates/map.php')
+    return render_template('index.php', koordinat = start_coord)
+    
+    # return map._repr_html_()
 
 if __name__ == "__main__":
     app.run(debug=True) 

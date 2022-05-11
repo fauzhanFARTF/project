@@ -1,0 +1,57 @@
+/* 5. Orang Kelima Message Wrapper dan Buat Footer di Tablet */
+@media all and (max-width: 1000px) {
+      .top-wrapper h1 {
+        font-size: 32px;
+      }
+      .lesson {
+        width: 30%;
+        margin-bottom: 50px;  
+      }
+      .heading h2{
+        font-size: 20px;
+      }
+      .btn {
+        width: 30%;
+      }
+    }
+/* 5. Orang Kelima Buat Responsive di Tablet */
+/* 1. Orang Pertama Buat Responsive di Smart Phone */
+    @media all and (max-width: 670px) {
+      .header-right {
+        display: none;
+      }
+      .menu-icon {
+        color: white;
+        float: right;
+        font-size: 25px;
+        padding: 21px 0;
+        display: none;
+      }
+      .menu-icon {
+        display: block;
+      } 
+      .top-wrapper {
+        text-align: left;
+      }
+      .top-wrapper h1 {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      .top-wrapper p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+        .facebook {
+        margin-bottom: 10px;
+      }
+        .btn {
+        width: 100%;
+      }
+        .lesson {
+        width: 100%;
+      }
+        footer {
+        text-align: center;
+      }
+    }
+/* 1. Orang Pertama Buat Responsive di Smart Phone */

@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+p,
+ul {
+  padding-bottom: 10px;
+}
+
+/* nav {
+  background-color: salmon;
+  height: 70px;
+  width: auto;
+} */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.content {
+  margin: 20px 100px;
+}
+
+.bg-customnav {
+  background-color: #1d63a9 !important;
+}
+
+.navbar-light .navbar-brand {
+  color: #ffffff !important;
+  border-radius: 3px;
+}
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+  color: #1d63a9 !important;
+  background-color: white !important;
+  transition: 2s;
+  padding: 10px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff !important;
+  border-radius: 3px;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #1d63a9 !important;
+  background-color: white !important;
+  transition: 1s;
+}
+
+.btn-outline-success {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.btn-outline-success:hover {
+  color: #1d63a9 !important;
+  background-color: #ffffff !important;
+  border-color: #198754;
+}
+.btn-check:focus + .btn-outline-success,
+.btn-outline-success:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+}
+.btn-check:checked + .btn-outline-success,
+.btn-check:active + .btn-outline-success,
+.btn-outline-success:active,
+.btn-outline-success.active,
+.btn-outline-success.dropdown-toggle.show {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+}
+.btn-check:checked + .btn-outline-success:focus,
+.btn-check:active + .btn-outline-success:focus,
+.btn-outline-success:active:focus,
+.btn-outline-success.active:focus,
+.btn-outline-success.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+}
+.btn-outline-success:disabled,
+.btn-outline-success.disabled {
+  color: #198754;
+  background-color: transparent;
+}
+
+.content {
+  margin: 50 auto;
+}
+#about {
+  background-color: #1d63a9 !important;
+  margin: 50px auto;
+  text-align: center;
+  padding: 10px 0px;
+  color: #ffffff !important;
+}
+.logo img {
+  margin-right: 20px;
+  float: right;
+}

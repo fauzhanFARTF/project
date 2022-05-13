@@ -98,25 +98,24 @@ def indeks():
     
     # Membaca data DBF
     valuesdesa = gpd.read_file(r+'/assets/Desa.dbf')
-    valueskecamatan = gpd.read_file(r+'/assets/Kecamatan.dbf')
     
     start_coord = [-6.1950, 106.5528]
-    map = folium.Map(location=start_coord, zoom_start=11, control_scale=True, height=750)
+    map = folium.Map(location=start_coord, zoom_start=11, control_scale=True, height=650, width="100%")
     
 
     # Chloroplet 
-    batas_kecamatan = folium.Choropleth(
-        geo_data = batas_kecamatan,                                           #data geojson
-        name = 'Kepadatan Penduduk Kecamatan',                                #nama
-        data = valueskecamatan,                                               #data tabel  
-        columns =['KECAMATAN', 'KEP_PEND'],                                   #colom dari tabel
-        key_on ="properties.KECAMATAN",                                       #kunci
-        fill_color = 'Spectral_r',                                            #pallete
-        fill_opacity = 0.75,                                                  #transparansi fill
-        line_opacity = 0.3,                                                   #transparansi outline
-        legend_name = f"Kepadatan Penduduk per kecamatan Kabupaten Tangerang Tahun 2015",   #legenda
-        smooth_factor= 0.05,
-    ).add_to(map)
+    # batas_kecamatan = folium.Choropleth(
+    #     geo_data = batas_kecamatan,                                           #data geojson
+    #     name = 'Kepadatan Penduduk Kecamatan',                                #nama
+    #     data = valueskecamatan,                                               #data tabel  
+    #     columns =['KECAMATAN', 'KEP_PEND'],                                   #colom dari tabel
+    #     key_on ="properties.KECAMATAN",                                       #kunci
+    #     fill_color = 'Spectral_r',                                            #pallete
+    #     fill_opacity = 0.75,                                                  #transparansi fill
+    #     line_opacity = 0.3,                                                   #transparansi outline
+    #     legend_name = f"Kepadatan Penduduk per kecamatan Kabupaten Tangerang Tahun 2015",   #legenda
+    #     smooth_factor= 0.05,
+    # ).add_to(map)
     
     batas_desa = folium.Choropleth(
         geo_data = batas_desa,                                                #data geojson
@@ -134,7 +133,7 @@ def indeks():
     # Toolkit and Pop Up
     style_function = "font-size: 10px; font-weight: bold"
     
-    batas_kecamatan.geojson.add_child(folium.features.GeoJsonTooltip(['KECAMATAN','KEP_PEND'], style=style_function, labels=True))
+    # batas_kecamatan.geojson.add_child(folium.features.GeoJsonTooltip(['KECAMATAN','KEP_PEND'], style=style_function, labels=True))
     
     batas_desa.geojson.add_child(folium.features.GeoJsonTooltip(['DESA_KEL','KECAMATAN','KEP_PEND'], style=style_function, labels=True))
     
@@ -148,7 +147,7 @@ def indeks():
     marker_cluster = MarkerCluster().add_to(map)
     
     for  POINT_Y, POINT_X, NAMAOBJ in locations :
-        folium.Marker(location=[POINT_Y, POINT_X],popup= NAMAOBJ, clustered_Marker= True, style=style_function, name = "Toko Modern").add_to(marker_cluster)
+        folium.Marker(location=[POINT_Y, POINT_X],popup= NAMAOBJ, icons="darkblue", clustered_Marker= True, style=style_function, name = "Toko Modern").add_to(marker_cluster)
 
     
     # Basemap
@@ -163,7 +162,7 @@ def indeks():
     
     # Plugins
     Draw (
-        export=True, 
+        export=False, 
         filename='/assets/test.geojson', 
         position="topleft", 
         draw_options = None, 
@@ -190,9 +189,9 @@ def indeks():
     map.add_child(minimap)
     
     map.save(r+'/templates/map.php')
-    return render_template('index.php', koordinat = start_coord)
-    
+    return render_template('index.php',)
     # return map._repr_html_()
+
 
 if __name__ == "__main__":
     app.run(debug=True) 

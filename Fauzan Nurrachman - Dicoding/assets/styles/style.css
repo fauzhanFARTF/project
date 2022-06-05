@@ -102,12 +102,10 @@ header nav figure img {
 .menu-toggle input:checked ~ span:nth-child(4) {
   transform: rotate(-45deg) translate(-1px, 0px);
 }
-header .wrapper {
+.slider {
   background-image: url(../images/4465335504_235df183b2_b.jpeg);
   height: 500px;
   background-size: cover;
-  background-color: white;
-  color: white;
   text-align: center;
 }
 main {
@@ -241,6 +239,9 @@ main aside article ul li p {
 main aside article p {
   text-align: center;
 }
+main svg {
+  width: 100%;
+}
 
 .btn-wrapper {
   text-align: center;
@@ -311,6 +312,7 @@ footer #left {
 footer #right {
   font-size: 25px;
 }
+
 @media screen and (max-width: 1210px) {
   main aside {
     margin-top: 20px;
